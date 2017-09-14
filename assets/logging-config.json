@@ -1,0 +1,32 @@
+{
+    "appenders": [
+        {
+            "console": {
+                "name": "Console",
+                "patternLayout": "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+            },
+            "DB": {
+                "name": "DB",
+                "patternLayout": "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+            }
+        }
+    ],
+    "loggers": [
+        {
+            "logger": {
+                "name": "com.foo.Bar",
+                "level": "trace",
+                "appenderRef": [
+                    "Console"
+                ]
+            },
+            "root": {
+                "level": "error",
+                "appenderRef": [
+                    "Console",
+                    "DB"
+                ]
+            }
+        }
+    ]
+}

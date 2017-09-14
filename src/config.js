@@ -1,0 +1,9 @@
+class Config{
+    constructor(){
+        
+    }
+
+    setup(){
+        
+    }
+}

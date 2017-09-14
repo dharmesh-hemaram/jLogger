@@ -4,15 +4,41 @@
   "description": "jLogger is front end logger which tracks all logging and store in DB",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "concurrently \"webpack -w --config webpack.prod.js\" \"karma start\"",
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "jLogger"
+    "url": "git+https://github.com/dharmesh-hemaram/jLogger.git"
   },
   "keywords": [
-    "looger"
+    "looger",
+    "jlogger",
+    "log4j"
   ],
   "author": "Dharmesh",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/dharmesh-hemaram/jLogger/issues"
+  },
+  "homepage": "https://github.com/dharmesh-hemaram/jLogger#readme",
+  "dependencies": {
+    "@dharmesh-hemaram/jdb": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "concurrently": "^3.5.0",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-merge": "^4.1.0"
+  }
 }
