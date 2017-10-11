@@ -1,15 +1,14 @@
 const path = require('path');
-var packageJson = require('./package.json');
 
 module.exports = {
     entry: {
-        Logger: './src/log-manager.js'
+        /*index: './src/index.js',*/
+        jlogger: './src/index.js'
     },
     output: {
-        filename: 'j[name].js'.toLowerCase(),
+        filename: '[name].js'.toLowerCase(),
         path: path.resolve(__dirname, 'dist'),
         libraryExport: "default",
-        library: "[name]",
         libraryTarget: "umd",
     }, module: {
         rules: [{
@@ -19,10 +18,5 @@ module.exports = {
                 presets: ["env"]
             }
         }]
-    }, resolve: {
-        modules: ["node_modules"],
-        alias: {
-            jDB: path.resolve(__dirname, 'path/to/file.js')
-        }
     }
 }

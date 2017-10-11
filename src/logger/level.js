@@ -9,10 +9,11 @@ const LEVEL_TYPE = {
 }
 
 class LEVEL {
-    constructor(msg, throwable, levelF) {
+    constructor(msg, throwable, level) {
         this.msg = msg;
         this.throwable = throwable;
         this.level = level;
+        this.timeStamp = new Date().getTime();
     }
 }
 class Error extends LEVEL {

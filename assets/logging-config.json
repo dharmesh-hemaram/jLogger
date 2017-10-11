@@ -1,32 +1,28 @@
 {
-    "appenders": [
-        {
-            "console": {
-                "name": "Console",
-                "patternLayout": "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
-            },
-            "DB": {
-                "name": "DB",
-                "patternLayout": "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
-            }
-        }
-    ],
-    "loggers": [
-        {
-            "logger": {
-                "name": "com.foo.Bar",
-                "level": "trace",
-                "appenderRef": [
-                    "Console"
-                ]
-            },
-            "root": {
-                "level": "error",
-                "appenderRef": [
-                    "Console",
-                    "DB"
-                ]
-            }
-        }
-    ]
+  "appenders": {
+    "console": {
+      "name": "Console",
+      "patternLayout": "[%level] %date %c %M - %msg\n"
+    },
+    "DB": {
+      "name": "DB",
+      "patternLayout": "[%level] %date{MM-dd-yyyy HH:mm:ss} %c %M - %msg\n"
+    }
+  },
+  "loggers": {
+    "logger": {
+      "pattern": "foo",
+      "level": "log",
+      "appenderRefs": [
+        "Console"
+      ]
+    },
+    "root": {
+      "level": "error",
+      "appenderRefs": [
+        "Console",
+        "DB"
+      ]
+    }
+  }
 }
