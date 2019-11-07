@@ -1,0 +1,23 @@
+{
+    "databaseName": "jLogger",
+    "version": "1",
+    "stores": [
+        {
+            "name": "log",
+            "keyPath": "logId",
+            "type": "number",
+            "indexes": [
+                {
+                    "name": "level",
+                    "type": "string",
+                    "nullable": false
+                },
+                {
+                    "name": "date",
+                    "type": "date",
+                    "nullable": false
+                }
+            ]
+        }
+    ]
+}

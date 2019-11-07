@@ -1,0 +1,28 @@
+{
+  "appenders": {
+    "console": {
+      "name": "Console",
+      "patternLayout": "[%level] %date %c %M - %msg\n"
+    },
+    "DB": {
+      "name": "DB",
+      "patternLayout": "[%level] %date{MM-dd-yyyy HH:mm:ss} %c %M - %msg\n"
+    }
+  },
+  "loggers": {
+    "logger": {
+      "pattern": "foo",
+      "level": "log",
+      "appenderRefs": [
+        "Console"
+      ]
+    },
+    "root": {
+      "level": "error",
+      "appenderRefs": [
+        "Console",
+        "DB"
+      ]
+    }
+  }
+}
